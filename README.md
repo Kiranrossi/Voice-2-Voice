@@ -1,10 +1,10 @@
-# 🎙️ Voice2Voice.Ai for Comply2Reg
+# 🎙️ Voice2Voice.Ai
 
-![Comply2Reg Banner](https://img.shields.io/badge/AI-Comply2Reg-blue) ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white) ![Groq](https://img.shields.io/badge/Powered%20by-Groq-orange) ![Python](https://img.shields.io/badge/Python-3.13-blue)
+![AI Banner](https://img.shields.io/badge/AI-Voice2Voice-blue) ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white) ![Groq](https://img.shields.io/badge/Powered%20by-Groq-orange) ![Python](https://img.shields.io/badge/Python-3.13-blue)
 
-**Voice2Voice.Ai** is a production-grade, monolithic voice-to-voice conversation agent designed to act as **AuditJiini**, the official compliance assistant for [Comply2Reg](https://www.comply2reg.com/). 
+**Voice2Voice.Ai** is a production-grade, monolithic voice-to-voice conversation agent.
 
-It enables seamless, real-time voice interactions where users can ask complex fintech compliance questions and receive vocal responses with ultra-low latency.
+It enables seamless, real-time voice interactions where users can ask complex questions and receive vocal responses with ultra-low latency.
 
 ---
 
@@ -14,14 +14,14 @@ The application follows a **Monolithic Streamlit Architecture** to ensure easy d
 
 ```mermaid
 graph TD
-    User[👤 User] -->|Voice Input| UI[🖥️ Streamlit Frontend]
-    UI -->|Unlocks Audio| App[app.py Logic Core]
+    User["👤 User"] -->|Voice Input| UI["🖥️ Streamlit Frontend"]
+    UI -->|Unlocks Audio| App["app.py Logic Core"]
     
     subgraph "AI Processing Pipeline"
-        App -->|1. Transcribe Audio| STT[👂 Groq Whisper (STT)]
-        STT -->|Text Query| LLM[🧠 Groq Llama 3 (LLM)]
-        LLM -->|Context + RAG| Knowledge[📚 System Prompt & Knowledge Base]
-        LLM -->|Text Response| TTS[🗣️ ElevenLabs / gTTS]
+        App -->|1. Transcribe Audio| STT["👂 Groq Whisper (STT)"]
+        STT -->|Text Query| LLM["🧠 Groq Llama 3 (LLM)"]
+        LLM -->|Context + RAG| Knowledge["📚 System Prompt & Knowledge Base"]
+        LLM -->|Text Response| TTS["🗣️ ElevenLabs / gTTS"]
     end
     
     TTS -->|Audio Bytes| UI
